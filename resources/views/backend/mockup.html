@@ -1,0 +1,36 @@
+<!--@foreach ($cart as $item)
+              <tr>
+                <td class="p-2 w-1/6 text-sm leading-normal text-center align-middle bg-transparent border-b whitespace-nowrap shadow-transparent">
+                  @if($item->foto_produk)
+                      <img src="{{ $item->foto_produk }}" class="rounded flex mx-auto" style="width: 150px">
+                  @else
+                      <p>No Image</p>
+                  @endif
+                </td>
+                <td class="p-2 w-1/4 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent pl-5 text-wrap space-y-2">
+                    <div class="flex flex-col justify-center space-y-1">
+                        <h6 class="mb-0 text-sm leading-normal">{{ $item->nama_produk}}</h6>
+                        <p class="mb-0 text-xs leading-tight text-slate-400"></p>
+                        <span class="text-sm font-semibold leading-tight text-slate-400">Rp {{ number_format($item->rates->nama_rate, 0, ',', '.')  }}</span>
+                    </div>
+                    <div class="flex grid-cols-3 bg-white border-2 text-center w-36">
+                      <button class="px-1 border-r-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14" />
+                      </svg>
+                      </button>
+                      <input type="number" value="1" min="1" name="" id="" class="w-10 mx-auto text-center">
+                      <button class="px-1 border-l-2"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.5v15m7.5-7.5h-15" />
+                      </svg>
+                      </button>
+                    </div>
+                </td>
+                <td class="p-2 w-1/12 align-middle bg-transparent border-b whitespace-nowrap shadow-transparent text-center">
+                    <form action="{{ route('admin.destroy', $item->id_produk) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="text-xs font-semibold leading-tight text-slate-400"> Hapus </button>
+                    </form>
+                </td>
+              </tr>
+              @endforeach-->
